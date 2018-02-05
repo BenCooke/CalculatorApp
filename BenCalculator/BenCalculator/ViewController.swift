@@ -82,9 +82,11 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
-    
+    @IBAction func minus(_ sender: Any) {
+        firstNumber = numberField.text!
+        numberField.text = ""
+        symbol = "-"
+    }
     
     
     @IBAction func plus(_ sender: Any) {
@@ -93,12 +95,45 @@ class ViewController: UIViewController {
         symbol = "+"
         
     }
+    
+    @IBAction func multiply(_ sender: Any) {
+        firstNumber = numberField.text!
+        numberField.text = ""
+        symbol = "*"
+    }
+    
+    
+    @IBAction func divide(_ sender: Any) {
+        firstNumber = numberField.text!
+        numberField.text = ""
+        symbol = "/"
+    }
+    
 
     @IBAction func equals(_ sender: UIButton) {
         if (symbol=="+"){
             let answer = Int(firstNumber)! + Int(numberField.text!)!
             numberField.text = String(answer)
         }
+        
+        else if (symbol=="-"){
+            let answer = Int(firstNumber)! - Int(numberField.text!)!
+            numberField.text = String(answer)
+        }
+        
+        else if (symbol=="*"){
+            let answer = Int(firstNumber)! * Int(numberField.text!)!
+            numberField.text = String(answer)
+        }
+        
+        else if (symbol=="/"){
+            let answer = Int(firstNumber)! / Int(numberField.text!)!
+            numberField.text = String(answer)
+        }
+        
+        
+        
+        
         
         
         
